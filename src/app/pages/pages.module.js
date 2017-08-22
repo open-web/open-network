@@ -12,7 +12,7 @@
     'BlurAdmin.pages.ui',
     'BlurAdmin.pages.components',
     'BlurAdmin.pages.form',
-    'BlurAdmin.pages.tables',
+    'BlurAdmin.pages.user',
     'BlurAdmin.pages.charts',
     'BlurAdmin.pages.maps',
     'BlurAdmin.pages.profile',
