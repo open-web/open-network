@@ -19,7 +19,62 @@
       </div>
     </div> -->
     <!-- <div class="col-lg-6 col-md-6"> -->
-      <div ba-panel ba-panel-title="USER MANAGEMENT" ba-panel-class="with-scroll table-panel">
+    <script type="text/ng-template" id="myModalContent.html">
+        <!-- template for modal -->
+            <div class="modal-header">
+                <h3 class="modal-title">Choose your products!</h3>
+            </di v>
+            <div class="modal-body">
+                <form>
+                    <div class="checkbox" ng-repeat="item in products">
+                        <label> 
+                            <input type="checkbox" ng-click="chkChange(item)" ng-checked="selected.indexOf(item) !== -1"/>
+                            {{item}}
+                        </label>
+                    </div>    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+    
+    <!-- <table class="table">
+        <tr>
+            <th>User name</th>
+            <th>products selected</th>
+        </tr>
+        <tr ng-repeat="user in userData">
+            <td>{{user.name}}</td>
+            <td><button ng-click="changeProducts(user)">{{( user.selectedProducts | array ) || 'nothing selected!' }}</button></td>
+        </tr> 
+    </table> -->
+    <div ba-panel ba-panel-title="USER MANAGEMENT" ba-panel-class="with-scroll table-panel">
+        <form class="row form-inline">
+          <div class="form-group col-sm-3 col-xs-6">
+            <input type="text" class="form-control" id="exampleInputName2" placeholder="Name">
+          </div>
+          <div class="form-group col-sm-3 col-xs-6">
+            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
+          </div>
+          <!-- <div class="checkbox">
+            <label class="custom-checkbox">
+              <input type="checkbox">
+              <span>Remember me</span>
+            </label>icon-
+          </div> -->
+          <div class="button-wrapper pull-left modal-buttons">
+            <div class="modal-buttons clearfix" style="margin-top: 12px">
+              <i class="fa fa-filter fa-2x" style="cursor: pointer;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fa fa-refresh fa-2x" style="cursor: pointer;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fa fa-plus fa-2x" data-toggle="modal" ng-click="AddUser('app/pages/user/adduser/adduser.html', 'md')" style="cursor: pointer;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fa fa-trash fa-2x" style="cursor: pointer;"></i>
+              <!-- <button type="submit" class="btn btn-danger">Reset</button> -->
+              <!-- <button type="button" class="btn btn-primary" data-toggle="modal" ng-click="open('app/pages/ui/modals/modalTemplates/basicModal.html', 'md')">Add</button> -->
+            </div>  
+          </div>
+        </form>
         <div class="vertical-scroll">
           <table class="table table-striped">
             <thead>
@@ -30,6 +85,7 @@
               <th>Username</th>
               <th>Email</th>
               <th>Age</th>
+              <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -40,6 +96,7 @@
               <td>{{item.username}}</td>
               <td><a class="email-link" ng-href="mailto:{{item.email}}">{{item.email}}</a></td>
               <td>{{item.age}}</td>
+              <td><i class="fa fa-pencil fa-1x" style="cursor: pointer;" data-toggle="modal" ng-click="EditUser('app/pages/user/edituser/edituser.html', 'md')" style="cursor: pointer;"></i></td>
             </tr>
             </tbody>
           </table>
@@ -61,3 +118,8 @@
   </div>
  -->
 </div>
+<style type="text/css">
+  .table-panel{
+    height:595px;
+  }
+</style>

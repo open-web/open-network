@@ -6,10 +6,11 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.user')
-      .controller('UserController', UserController);
+      .controller('UserController', UserController)
+      .controller('ModalsPageCtrl', ModalsPageCtrl);
 
   /** @ngInject */
-  function UserController($scope, $filter, editableOptions, editableThemes) {
+  function UserController($scope, $filter, editableOptions, editableThemes,$uibModal) {
 
     $scope.smartTablePageSize = 10;
 
@@ -707,8 +708,47 @@
     editableOptions.theme = 'bs3';
     editableThemes['bs3'].submitTpl = '<button type="submit" class="btn btn-primary btn-with-icon"><i class="ion-checkmark-round"></i></button>';
     editableThemes['bs3'].cancelTpl = '<button type="button" ng-click="$form.$cancel()" class="btn btn-default btn-with-icon"><i class="ion-close-round"></i></button>';
+    $scope.AddUser = function (page, size) {
+      $uibModal.open({
+        animation: true,
+        templateUrl: page,
+        size: size,
+        resolve: {
+          items: function () {
+            return $scope.items;
+          }
+        }
+      });
+    };
+    $scope.EditUser = function (page, size) {
+      $uibModal.open({
+        animation: true,
+        templateUrl: page,
+        size: size,
+        resolve: {
+          items: function () {
+            return $scope.items;
+          }
+        }
+      });
+    };
 
-
+  }
+  function ModalsPageCtrl($scope, $uibModal, baProgressModal) {
+    $scope.open = function (page, size) {
+      console.log("a");
+      $uibModal.open({
+        animation: true,
+        templateUrl: page,
+        size: size,
+        resolve: {
+          items: function () {
+            return $scope.items;
+          }
+        }
+      });
+    };
+    $scope.openProgressDialog = baProgressModal.open;
   }
 
 })();

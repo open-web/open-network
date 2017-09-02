@@ -1,0 +1,63 @@
+<div class="widgets">
+
+  <!-- <div class="row">
+    <div class="col-lg-6 col-md-12">
+      <div ba-panel ba-panel-title="Hover Rows" ba-panel-class="with-scroll table-panel">
+        <div include-with-scope="app/pages/tables/widgets/hoverRows.html"></div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+      <div ba-panel ba-panel-title="Bordered Table" ba-panel-class="with-scroll table-panel">
+        <div include-with-scope="app/pages/tables/widgets/borderedTable.html"></div>
+      </div>
+    </div>
+  </div> -->
+  <div class="row">
+    <!-- <div class="col-lg-6 col-md-12">
+      <div ba-panel ba-panel-title="Condensed Table" ba-panel-class="with-scroll table-panel">
+        <div include-with-scope="app/pages/tables/widgets/condensedTable.html"></div>
+      </div>
+    </div> -->
+    <!-- <div class="col-lg-6 col-md-6"> -->
+      <div ba-panel ba-panel-title="GROUP MANAGEMENT" ba-panel-class="with-scroll table-panel">
+        <div class="vertical-scroll">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th class="table-id">#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Age</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in smartTableData">
+              <td class="table-id">{{item.id}}</td>
+              <td>{{item.firstName}}</td>
+              <td>{{item.lastName}}</td>
+              <td>{{item.username}}</td>
+              <td><a class="email-link" ng-href="mailto:{{item.email}}">{{item.email}}</a></td>
+              <td>{{item.age}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+  <!-- <div class="row">
+    <div class="col-lg-6 col-md-12">
+      <div ba-panel ba-panel-title="Contextual Table" ba-panel-class="with-scroll table-panel">
+        <div include-with-scope="app/pages/tables/widgets/contextualTable.html"></div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+      <div ba-panel ba-panel-title="Responsive Table" ba-panel-class="with-scroll table-panel">
+        <div include-with-scope="app/pages/tables/widgets/responsiveTable.html"></div>
+      </div>
+    </div>
+  </div>
+ -->
+</div>
