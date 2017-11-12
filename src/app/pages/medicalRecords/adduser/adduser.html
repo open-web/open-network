@@ -1,0 +1,106 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Add User</h4>
+    </div>
+    <form ng-submit="addNewUser();">
+        <div class="modal-body">
+            <!-- Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+    dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+    suscipit lobortis nisl ut aliquip ex ea commodo consequat. -->
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <!-- <label for="inputFirstName">First Name</label> -->
+                        <input type="text" class="form-control" ng-model="userCtrl.addUserDetails.firstname" id="inputFirstName" placeholder="First Name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <!-- <label for="inputLastName">Last Name</label> -->
+                        <input type="text" class="form-control" ng-model="userCtrl.addUserDetails.lastname" id="inputLastName" placeholder="Last Name">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <!-- <label for="inputFirstName">First Name</label> -->
+                        <input type="text" class="form-control" ng-model="userCtrl.addUserDetails.username" id="inputUserName" placeholder="Username">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <!-- <label for="inputLastName">Last Name</label> -->
+                        <input type="text" class="form-control" ng-model="userCtrl.addUserDetails.age" id="inputAge" placeholder="Age">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <!-- <label for="inputFirstName">Email</label> -->
+                        <input type="password" class="form-control" id="inputPassword" ng-model="userCtrl.addUserDetails.password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <!-- <label for="inputWebsite">Age</label> -->
+                        <input type="password" class="form-control" id="inputConfirmPassword" ng-model="userCtrl.addUserDetails.confirmpassword" placeholder="Confirm Password">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <!-- <label for="inputFirstName">Email</label> -->
+                        <input type="email" class="form-control" id="inputEmail" ng-model="userCtrl.addUserDetails.email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <select ng-model="userCtrl.addUserDetails.role_id" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true" search-enabled="false">
+                            <option value="" ng-disabled="true" ng-selected="true">Select Role</option>
+                            <option ng-repeat="role in userCtrl.roleArray track by role.id" ng-value="role.id">{{role.name}}</option>
+                            <!-- <ui-select-choices repeat="standardItem in selectpickerVm.standardSelectItems | filter: $select.search">
+                                <span ng-bind-html="standardItem.label"></span>
+                            </ui-select-choices> -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <!-- <label for="inputFirstName">Email</label> -->
+                        <select ng-model="userCtrl.addUserDetails.role_id" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true" search-enabled="false">
+                            <option value="" ng-disabled="true" ng-selected="true">Select Role</option>
+                            <option ng-repeat="role in userCtrl.roleArray track by role.id" ng-value="role.id">{{role.name}}</option>
+                            <!-- <ui-select-choices repeat="standardItem in selectpickerVm.standardSelectItems | filter: $select.search">
+                                <span ng-bind-html="standardItem.label"></span>
+                            </ui-select-choices> -->
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <select ng-model="userCtrl.addUserDetails.status" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true" search-enabled="false">
+                            <option value="" ng-disabled="true" ng-selected="true">Status</option>
+                            <option value="A">Active</option>
+                            <option value="I">Inactive</option>
+                            <!-- <ui-select-choices repeat="standardItem in selectpickerVm.standardSelectItems | filter: $select.search">
+                                <span ng-bind-html="standardItem.label"></span>
+                            </ui-select-choices> -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" ng-click="userCtrl.addNewUser()">Save changes</button>
+                <button type="button" class="btn btn-primary" ng-click="$dismiss()">Cancel</button>
+            </div>
+    </form>
+    </div>

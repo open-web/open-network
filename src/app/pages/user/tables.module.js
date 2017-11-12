@@ -17,7 +17,7 @@
                 title: 'Users',
                 controller: 'UserController as userCtrl',
                 sidebarMeta: {
-                    icon: 'fa fa-user',
+                    icon: 'fa fa-user-md',
                     order: 300
                 },
             });
